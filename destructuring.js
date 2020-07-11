@@ -25,7 +25,7 @@ var carDetails = {
 const {color} = carDetails
 const {make} = carDetails
 const {model} = carDetails
-const {year} = carDetails
+const {year} = carDetails 
 
 
 ////////// PROBLEM 2 //////////

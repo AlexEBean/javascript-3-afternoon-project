@@ -162,7 +162,7 @@ var deleteTheBigNumbers = {
     if (deleteTheBigNumbers[key] > 100) {
       delete deleteTheBigNumbers[key]
     }
-  }
+  } 
 
 ////////// PROBLEM 7 //////////
 
