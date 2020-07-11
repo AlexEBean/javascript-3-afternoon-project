@@ -158,10 +158,8 @@ var myCar = {
 
 //Code Here
 function recordCleaner () {
-  for (let i = 0; i < myCar.length; i++){
-    if (accidents.atFaultForAccident[i] = true){
-      accidents.atFaultForAccident.splice (i,1,false)
-    }
+  for (let i = 0; i < myCar.accidents.length; i++){
+     myCar.accidents[i].atFaultForAccident = false
   }
   return myCar
 }
