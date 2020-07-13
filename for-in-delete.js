@@ -113,17 +113,17 @@ function secrets (obj) {
   Uncomment the example below to see a for in loop deleting all the properties inside an object.
 */
 
-// var deleteAllThethings = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
+var deleteAllThethings = {
+  one: 1,
+  two: 2,
+  three: 3
+}
 
-// for(var key in deleteAllThethings) {
-//   delete deleteAllThethings[key]
-// }
+for(var key in deleteAllThethings) {
+  delete deleteAllThethings[key]
+}
 
-// console.log(deleteAllThethings)
+console.log(deleteAllThethings)
 
 
 
