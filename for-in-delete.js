@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./for-in-delete.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -31,8 +30,6 @@
 //   console.log(key)
 // }
 
-
-
 ////////// PROBLEM 1 //////////
 
 /*
@@ -41,13 +38,14 @@
 
 function showValues( obj ) {
   //Code Here
-  let string = "";
-  for (let key in obj){
+  let string = ""
+  for (let key in obj) {
     string += obj[key]
   }
-  return string 
+  return string
 }
 
+// bracket notation is needed when using for in loops
 
 
 ////////// PROBLEM 2 //////////
@@ -60,13 +58,14 @@ function showValues( obj ) {
 
 //Code Here
 function greaterThan10 (obj) {
-  for (let key in obj){
-    if (obj[key] > 10){ 
+  for (let key in obj) {
+    if (obj[key] > 10){
       obj[key] = 0
     }
   }
   return obj
 }
+
 
 ////////// PROBLEM 3 //////////
 
@@ -79,7 +78,7 @@ function greaterThan10 (obj) {
 //Code Here
 function double (obj) {
   for (let key in obj) {
-    obj[key] = obj[key] * 2
+    obj[key] *= 2
   }
   return obj
 }
@@ -97,14 +96,26 @@ function double (obj) {
 
 //Code Here
 function secrets (obj) {
-  let string = ""
+  let sentence = ""
   for (let key in obj) {
     if (key.startsWith("sh")){
-      string += obj[key]
+      sentence += obj[key]
     }
   }
-  return string
+  return sentence
 }
+
+// Another solution
+// 
+// function secrets (obj) {
+//   let sentence = ""
+//   for (let key in obj) {
+//     if (key.indexOf ("sh") >= 0){
+//       sentence += obj[key]
+//     }
+//   }
+//   return sentence
+// }
 
 
 /* 
@@ -135,11 +146,10 @@ console.log(deleteAllThethings)
 */
 
 //Code Here
-
-function removePassword (obj) {
-    delete obj.password
-    return obj
-  }
+function removePassword(obj) {
+  delete obj.password
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
@@ -158,11 +168,12 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
-  for (let key in deleteTheBigNumbers) {
-    if (deleteTheBigNumbers[key] > 100) {
-      delete deleteTheBigNumbers[key]
-    }
-  } 
+for (let key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key]
+  }
+}
+
 
 ////////// PROBLEM 7 //////////
 
@@ -176,7 +187,7 @@ var deleteTheBigNumbers = {
 //Code Here
 function startsWithK (obj) {
   for (let key in obj) {
-    if (key.startsWith ("k")){
+    if (key.startsWith ("k")) {
       delete obj[key]
     }
   }
@@ -191,17 +202,35 @@ function startsWithK (obj) {
   Write a for in loop that loops over this object. Each property will have a sentence as it's value.
   If the property value does not contain the word 'treasure', delete the property.
   Return the updated object.
-
   (hint: the method includes() may be of use...)
 */
 
 //Code Here
 function hiddenTreasure (obj) {
   for (let key in obj) {
-    if (!obj[key].includes ("treasure")){
+    if (!obj[key].includes("treasure")){
       delete obj[key]
     }
   }
-  return obj
+    return obj
 }
 
+// Also works 
+// 
+// function hiddenTreasure (obj) {
+//   for (let key in obj) {
+//     if(obj[key].includes("treasure") !== true) {
+//       delete obj[key]
+//     }
+//   }
+//   return obj
+// }
+
+// function hiddenTreasure (obj) {
+//   for (let key in obj) {
+//     if(obj[key].includes("treasure") === false) {
+//       delete obj[key]
+//     }
+//   }
+//   return obj
+// }

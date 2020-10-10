@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./higher-order.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -14,17 +13,24 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 
 /*
   Use the filter method on mixedNumbers to make a new array of just the even numbers.
-
   The filter function takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
 //Code Here
-let evenNumbers = mixedNumbers.filter (function(element, index, array){
-  return element % 2 === 0
+let evenNumbers = mixedNumbers.filter(function(element, index, array){
+  return element % 2 === 0;
 })
 
+// arrow function
+// let evenNumbers = mixedNumbers.filter(e => {
+//   return e % 2 === 0
+// })
+
+// let evenNumbers = mixedNumbers.filter(e => 
+  // e % 2 === 0
+  // )
 
 
 ////////// PROBLEM 2 //////////
@@ -36,10 +42,8 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 /*
   Use the map method on the prices array to calculate a new array of post-tax prices.
   Use a 7% tax rate.
-
   Math reminder! To calculate the price after tax, multiply the price by 1 plus the taxRate as a decimal.
   Example: if tax is 7%, the price afterTax could be calculated like this: afterTax = price * 1.07) 
-
   The map function also takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
@@ -47,10 +51,17 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 
 //Code Here
 let postTaxPrices = prices.map(function(element, index, array){
-  return element *= 1.07
-});
+  return element * 1.07
+})
 
+// arrow function
+// let postTaxPrices = prices.map(e => {
+//   return e * 1.07
+// })
 
+// let postTaxPrices = prices.map(e => 
+// e * 1.07
+// )
 
 ////////// PROBLEM 3 //////////
 
@@ -60,18 +71,18 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 
 /*
   Use the reduce method to calculate the sum of all the populations in the array.
-
   The reduce function has a slightly different setup for it's callback.
   function(runningTotal, curElement, curIndex, wholeArray){} Function Form
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
 
 //Code Here
-let totalPopulation = populations.reduce(function (acc, curr){
+let totalPopulation = populations.reduce(function(acc, curr) {
   return acc + curr
 })
 
-
+// arrow function
+// let totalPopulation = populations.reduce((acc, curr) => acc + curr)
 
 ////////// PROBLEM 4 //////////
 
@@ -90,16 +101,22 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 /*
   Now we're going to ramp these up a little bit.
   Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce with.
-
   Use the filter method to return only the monsters that have a CP of over 200.
 */
 
 //Code Here
 let myStrongest = monstersInYourPocket.filter(function(element, index, array){
-    return element.CP > 200
+  return element.CP > 200
 })
 
+// Arrow Function
+// let myStrongest = monstersInYourPocket.filter(e => {
+//   return e.CP > 200
+// })
 
+// let myStrongest = monstersInYourPocket.filter(e => 
+//     e.CP > 200
+//   )
 
 ////////// PROBLEM 5 //////////
 
@@ -114,12 +131,18 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals = orders.map(function(element, index, array){
+let orderTotals = orders.map(function(element, index, array) {
   return element.price * (1 + element.tax)
 })
 
+// Arrow Function
+// let orderTotals = orders.map(e => {
+//   return e.price * (1 + e.tax)
+// })
 
-
+// let orderTotals = orders.map(e =>
+//   e.price * (1 + e.tax)
+// )
 
 ////////// PROBLEM 6 //////////
 
@@ -137,12 +160,24 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal = purchases.filter(function(element, index, array){
+let bobsTotal = purchases.filter(function(element, index, array) {
   return element.owner === "Bob"
-}).map(function (element, index, array){
+}).map(function(element, index, array) {
   return element.price
-}).reduce(function(acc, curr){
+}).reduce(function(acc, curr) {
   return acc + curr
-}) 
+})
 
-// let bobsTotal = purchases.filter(element => element.owner === "Bob").map(element => element.price).reduce(function((acc,curr) => acc + curr)
+
+// Arrow Function
+// let bobsTotal = purchases.filter(e => {
+//   return e.owner === "Bob"
+// }).map(e => {
+//   return e.price
+// }).reduce((acc, curr) => acc + curr)
+
+// let bobsTotal = purchases.filter(e => 
+//       e.owner === "Bob"
+//   ).map(e => 
+//       e.price
+//     ).reduce((acc, curr) => acc + curr)

@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./nesting.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -80,16 +79,25 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 //Code Here
 function removeDuplicates () {
   for (let i = 0; i < workplaceAccidents.length; i++){
-    for (let j = i+1 ; j < workplaceAccidents.length; j++){
+    for (let j = i + 1; j < workplaceAccidents.length; j++) {
       if (workplaceAccidents[i] === workplaceAccidents[j]){
-        workplaceAccidents.splice(j, 1)
+        workplaceAccidents.splice(j,1)
       }
     }
-  }
-    return workplaceAccidents
+  } 
+  return workplaceAccidents
 }
 
-
+// function removeDuplicates () {
+//   for (let i = 0; i < workplaceAccidents.length; i++){
+//     for (let j = workplaceAccidents.length - 1; j > i; j--) {
+//       if (workplaceAccidents[i] === workplaceAccidents[j]){
+//         workplaceAccidents.splice(j,1)
+//       }
+//     }
+//   } 
+//   return workplaceAccidents
+// }
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -157,13 +165,29 @@ var myCar = {
 */
 
 //Code Here
-function recordCleaner () {
-  for (let i = 0; i < myCar.accidents.length; i++){
-     myCar.accidents[i].atFaultForAccident = false
+function recordCleaner() {
+    for (let i = 0; i < myCar.accidents.length; i++) {
+      myCar.accidents[i].atFaultForAccident = false
+    }
   }
-  return myCar
-}
 
+// With an if statement in the case this problem wasn't a boolean
+// function recordCleaner() {
+//   for (let i = 0; i < myCar.accidents.length; i++) {
+//     if (myCar.accidents[i].atFaultForAccident === true) {
+//       myCar.accidents[i].atFaultForAccident = false
+//     }
+//   }
+// }
+
+// Using for in loop 
+// function recordCleaner(){
+//   for(let key in myCar.accidents){
+//     if(myCar.accidents[key].atFaultForAccident === true){
+//       myCar.accidents[key].atFaultForAccident = false;
+//     }
+//   }
+// }
 
 ////////// PROBLEM 5 //////////
 
@@ -181,16 +205,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-function looper  () {
+function looper () {
   for (let i = 0; i < numsArr.length; i++){
-    for (let nesti = 0; nesti < numsArr[i].length; nesti++){
-      if (numsArr[i][nesti] % 2 === 1) {
-        numsArr[i][nesti] = "odd"
+    for (let j = 0; j < numsArr[i].length; j++){
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = "even"
       } else {
-        numsArr[i][nesti] = "even"
+        numsArr[i][j] = "odd"
       }
     }
   }
   return numsArr
 }
-

@@ -2,7 +2,6 @@
   Once you complete a problem, refresh ./destructuring.html in your browser and check to see if the problem's test(s) are passing.
   Passed tests will be indicated by a green circle.
   Failed tests will be indicated by a red X.
-
   You can refresh the page at any time to re-run all the tests.
 */
 
@@ -22,11 +21,7 @@ var carDetails = {
 */
 
 //Code Here
-const {color} = carDetails
-const {make} = carDetails
-const {model} = carDetails
-const {year} = carDetails 
-
+let {color, make, model, year} = carDetails
 
 ////////// PROBLEM 2 //////////
 
@@ -38,10 +33,7 @@ const {year} = carDetails
 
 function greeting( obj ) {
   //Code Here
-  const {firstName} = obj
-  const {lastName} = obj
-  const {title} = obj
-
+  let {firstName, lastName, title} = obj
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -60,19 +52,10 @@ function greeting( obj ) {
 */
 
 //Code Here
-
-  function totalPopulation (obj) {
-    const {
-      utah, california, texas, arizona
-    } = obj
-    return utah + california + texas + arizona
-  }
-
-  // const {utah} = obj
-  // const {california} = obj
-  // const {texas} = obj
-  // const {arizona} = obj
-
+function totalPopulation(obj) {
+  let {utah, california, texas, arizona} = obj
+  return utah + california + texas + arizona
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -85,13 +68,12 @@ function greeting( obj ) {
 */
 
 //Code Here
- function ingredients (obj) {
-  const health = []
-   const {carb, fat, protein} = obj
-   health.push(carb, fat, protein)
-   return health
- }
-
+function ingredients (obj) {
+  let {carb, fat, protein} = obj
+  let health = []
+  health.push(carb, fat, protein)
+  return health
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -102,26 +84,21 @@ function greeting( obj ) {
     function example( {one, two, three} ) {
       return one + two + three
     }
-
   Write a function called largeNumbers that will take a destructured object as it's parameter.
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
 
 //Code Here
-// function largeNumbers ({first, second, third}) {
-//  return Math.min(first, second, third)
-// }
-
 function largeNumbers ({first, second, third}) {
-  if (first < second && first < third) {
+  if (first < second && first < third){
       return first
-  } else if (second < first && second < third) {
+  } else if (second < third && second < first){
       return second
   } else {
       return third
   }
-  }
+}
 
 ////////// PROBLEM 6 //////////
 
@@ -132,10 +109,10 @@ function largeNumbers ({first, second, third}) {
 */
 
 //Code Here
-function numberGroups ({a, b, c}) {
+function numberGroups ({a,b,c}) {
   if (a.length > b.length && a.length > c.length) {
       return a
-  } else if (b.length > a.length && b.length > c.length) {
+  } else if (b.length > c.length && b.length > a.length) {
       return b
   } else {
       return c
